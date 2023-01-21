@@ -1,7 +1,7 @@
 import epxress from "express";
 const validator = epxress.Router();
 
-validator.get("/", (req, res, next): void => {
+validator.get("/", (req: epxress.Request, res: epxress.Response, next: epxress.NextFunction): void => {
   const name = req.query.name as string;
   const width = parseInt(req.query.width as string) as number;
   const height = parseInt(req.query.height as string) as number;

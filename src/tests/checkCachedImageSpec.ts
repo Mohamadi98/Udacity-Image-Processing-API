@@ -11,18 +11,18 @@ const request = supertest(app);
  * without any processing
  */
 
-describe("Suite3: testing caching endpoint", () => {
-  beforeAll(async () => {
+describe("Suite3: testing caching endpoint", (): void => {
+  beforeAll(async (): Promise<void> => {
     const response = await request.get(
       "/images?name=palmtunnel&width=600&height=600"
     );
   });
-  it("checkFile function should return true as the file already exist on disk", async () => {
-    const validPath = path.resolve("thumbnails", "palmtunnel_600_600.jpg");
+  it("checkFile function should return true as the file already exist on disk", async (): Promise<void> => {
+    const validPath: string = path.resolve("thumbnails", "palmtunnel_600_600.jpg");
     expect(await checkFile(validPath)).toBeTruthy();
   });
-  it("checkFile function should return false as the file does not exist on disk", async () => {
-    const invalidPath = path.resolve(
+  it("checkFile function should return false as the file does not exist on disk", async (): Promise<void> => {
+    const invalidPath: string = path.resolve(
       "thumbnails",
       "invalidFileName_600_600.jpg"
     );

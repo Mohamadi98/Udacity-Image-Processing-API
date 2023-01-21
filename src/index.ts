@@ -4,7 +4,7 @@ import validator from "./routes/Validator";
 import cached from "./routes/checkCachedImage";
 
 const app = express();
-const PORT = 3000;
+const PORT: number = 3000;
 const middleware = [validator, cached, route];
 
 app.use("/images", middleware);
