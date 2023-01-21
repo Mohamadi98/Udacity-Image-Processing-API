@@ -4,7 +4,7 @@ import path from "path";
 import checkFile from "../utilities/checkFileExist";
 const route = express.Router();
 
-route.get("/", async (req, res) => {
+route.get("/", async (req, res): Promise<void> => {
   const inputPath = path.resolve("images", `${req.query.name}` + ".jpg");
   if (await checkFile(inputPath)) {
     const outputPath = path.resolve(
