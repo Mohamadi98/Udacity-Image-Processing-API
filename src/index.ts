@@ -9,7 +9,7 @@ const middleware = [validator, cached, route];
 
 app.use("/images", middleware);
 
-app.listen(PORT, () => {
+app.listen(PORT, (): void => {
   console.log(`server started at https://localhost:${PORT}`);
 });
 
